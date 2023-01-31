@@ -4,6 +4,7 @@ export const config = {
   runtime: 'experimental-edge'
 };
 
+//todo: make new table in DB, and read count from there
 export default async function handler(req: NextRequest) {
   const result = await fetch('https://www.getrevue.co/api/v2/subscribers', {
     method: 'GET',

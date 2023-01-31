@@ -1,13 +1,14 @@
 import Image from 'next/image';
 
 import Container from '@/components/Container';
-import avatar from '@/../public/avatar.jpg';
-import avatarBW from '@/../public/avatar-bw.jpg';
+import avatar from '@/../public/avatar1.jpeg';
+import avatarBW from '@/../public/avatar2.jpeg';
 import PureLink from '@/components/PureLink';
-import { EDUCATION, externalLinks, innerLinks, LAST_JOB_TITLE, L_FIRST_PERSON } from '@/lib/utils/constants';
+import { externalLinks, innerLinks } from '@/lib/utils/constants';
+import { useTranslations } from 'next-intl';
 
 export default function About() {
-  // const t = useTranslations();
+  const t = useTranslations();
   return (
     <Container title="About – Simon Mor">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -29,18 +30,18 @@ export default function About() {
           </ul>
           <h2>Bio</h2>
           <h3>Job Title</h3>
-          <p>{LAST_JOB_TITLE}</p>
+          <p>{t('about.lastJob.title')}</p>
           <h3>About me</h3>
           <p>
-            {L_FIRST_PERSON}
+            {t('about.longFirstPerson', { lastJob: t('about.lastJob.company')} )}
           </p>
           <h3>Education</h3>
           <p>
-            {EDUCATION}
+            {t('about.education.degree')}, {t('about.education.institute')}
           </p>
           <h2>Headshots</h2>
           <div className="flex space-x-8">
-            <a href="/avatar.jpg">
+            <a href="/avatar1.jpeg">
               <Image
                 alt="Simon Mor headshot"
                 width={400}
@@ -49,7 +50,7 @@ export default function About() {
                 className="rounded-md"
               />
             </a>
-            <a href="/avatar-bw.jpg">
+            <a href="/avatar2.jpeg">
               <Image
                 alt="Simon Mor headshot"
                 width={400}
