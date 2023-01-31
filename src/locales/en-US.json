@@ -1,0 +1,31 @@
+{
+    "name": "Simon Mor",
+    "home": {
+        "briefSummary": "Helping companies and project fullfill their thecnological goals by building amazing products. Teaching about web development, serverless, and React / Next.js."
+    },
+    "about": {
+        "lastJob": {
+            "title": "Team Leader & Full Stack Software Developer",
+            "company": "Carwiz",
+            "url": "https://carwiz.co.il"
+        },
+        "longThirdPerson": "Simon Mor is the development team leader at {lastJob} where he helps the product and the team build a better web app and leads the Next.js app forward.  He is an open-source contributor. An educator, writer, and speaker, Simon has created courses on React, Next.js, and web development.",
+        "longFirstPerson": "Hey, I'm Simon. I'm the development team leader at {lastJob} where I'm helping the product and the team build a better web app and leads the Next.js app forward. I'm passionate about software developemnt frontend AND backend. an open-source contributor. An educator, writer, and speaker, I have created courses on React, Next.js, and web development.",
+        "shortFirstPerson": "Simon Mor is a software developer and team leader at {lastJob} Lead the Next.js app forward.",
+        "shortThirdPerson": "Hey, I'm Simon. I'm a software developer and team leader at {lastJob} Leading the Next.js app forward.",
+        "education": {
+            "institute": "SCE collage of engineering",
+            "degree": "B.Sc. in Chemical Engineering",
+            "graduationYear": 2013
+        }
+    },
+    "blog_posts": {
+        "title": "Featured Posts",
+        "readAll": "Read all posts"
+    },
+    "learn": {
+        "title": "Learn React & Next.js",
+        "description": "Build and deploy a modern SaaS application using the most popular open-source software. This course is 12 hours long and is completely live streamed.",
+        "watchAll": "Watch all videos"
+    }
+}

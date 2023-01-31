@@ -1,14 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/studio/(.*)",
+      "destination": "/studio/index.html"
+    }
+  ],
   "redirects": [
     {
-      "source": "/LeeRobinson.pdf",
-      "destination": "/robinson-resume-2019.pdf"
-    },
-    {
-      "source": "/robinson-resume-2019.pdf",
-      "destination": "https://read.cv/simon_mor"
+      "source": "/simonmor.pdf",
+      "destination": "/simonmor.pdf"
     },
     {
       "source": "/resume",
@@ -44,11 +46,11 @@
     },
     {
       "source": "/youtube",
-      "destination": "https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw"
+      "destination": "https://www.youtube.com/channel/UCknEw7ggAYYoK4D7p3tJM6g"
     },
     {
       "source": "/live",
-      "destination": "https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw/live"
+      "destination": "https://www.youtube.com/channel/UCknEw7ggAYYoK4D7p3tJM6g/live"
     },
     {
       "source": "/newsletter/(.*)",

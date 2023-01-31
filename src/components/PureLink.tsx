@@ -10,7 +10,6 @@ export type PureLinkProps = {
 };
 
 const PureLink: React.FC<PureLinkProps> = ({ href, name, isExternal, ...props }) => {
-    console.log({props});
     return (
         <Link 
             href={href} 

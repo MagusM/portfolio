@@ -1,16 +1,3 @@
-const LAST_JOB_TITLE = 'Team Leader & Full Stack Software Developer';
-const L_THIRD_PERSON = `Simon Mor is the development team leader at {carwiz} 
-    where he helps the product and the team build a better web app and leads the Next.js app forward. 
-    He is an open-source contributor. An educator, writer, and speaker, Simon has created
-    courses on React, Next.js, and web development.`;
-const L_FIRST_PERSON = `Hey, I'm Simon. I'm the development team leader at {carwiz} 
-    where I'm helping the product and the team build a better web app and leads the Next.js app forward. 
-    I'm passionate about software developemnt frontend AND backend. an open-source contributor. An educator, writer, and speaker, 
-    I have created courses on React, Next.js, and web development.`;
-const S_THIRD_PERSON = `Simon Mor is a software developer and team leader at {carwiz} Lead the Next.js app forward.`;
-const S_FIRST_PERSON = `Hey, I'm Simon. I'm a software developer and team leader at {carwiz} Leading the Next.js app forward.`;
-const EDUCATION = 'BSc in Chemistry engineering';
-
 const innerLinks = {
     home: { 
         href: '/', 
@@ -57,7 +44,7 @@ const externalLinks = {
         userName: 'MagusM',
     },
     youtube: { 
-        href: 'https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw', 
+        href: 'https://www.youtube.com/channel/UCknEw7ggAYYoK4D7p3tJM6g', 
         name: 'YouTube',
         userName: 'Simon Mor',
     },
@@ -74,12 +61,6 @@ const externalLinks = {
 };
 
 export { 
-    LAST_JOB_TITLE,
-    L_THIRD_PERSON,
-    L_FIRST_PERSON,
-    S_THIRD_PERSON,
-    S_FIRST_PERSON,
-    EDUCATION,
     innerLinks, 
     externalLinks 
 };

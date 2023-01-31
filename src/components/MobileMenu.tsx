@@ -3,8 +3,9 @@ import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-menu.module.css';
+import { innerLinks } from '@/lib/utils/constants';
 
-export default function MobileMenu() {
+const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
@@ -53,64 +54,64 @@ export default function MobileMenu() {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '150ms' }}
           >
-            <Link href="/" className="flex w-auto pb-4">
-              Home
+            <Link href={innerLinks.home.href} className="flex w-auto pb-4">
+              {innerLinks.home.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '175ms' }}
           >
-            <Link href="/guestbook" className="flex w-auto pb-4">
-              Guestbook
+            <Link href={innerLinks.guestbook.href} className="flex w-auto pb-4">
+              {innerLinks.guestbook.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '200ms' }}
           >
-            <Link href="/dashboard" className="flex w-auto pb-4">
-              Dashboard
+            <Link href={innerLinks.dashboard.href} className="flex w-auto pb-4">
+              {innerLinks.dashboard.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '250ms' }}
           >
-            <Link href="/blog" className="flex w-auto pb-4">
-              Blog
+            <Link href={innerLinks.blog.href} className="flex w-auto pb-4">
+              {innerLinks.blog.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '275ms' }}
           >
-            <Link href="/snippets" className="flex w-auto pb-4">
-              Snippets
+            <Link href={innerLinks.snippets.href} className="flex w-auto pb-4">
+              {innerLinks.snippets.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '300ms' }}
           >
-            <Link href="/newsletter" className="flex w-auto pb-4">
-              Newsletter
+            <Link href={innerLinks.newsletter.href} className="flex w-auto pb-4">
+              {innerLinks.newsletter.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '325ms' }}
           >
-            <Link href="/tweets" className="flex w-auto pb-4">
-              Tweets
+            <Link href={innerLinks.tweets.href} className="flex w-auto pb-4">
+              {innerLinks.tweets.name}
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '350ms' }}
           >
-            <Link href="/uses" className="flex w-auto pb-4">
-              Uses
+            <Link href={innerLinks.uses.href} className="flex w-auto pb-4">
+              {innerLinks.uses.name}
             </Link>
           </li>
         </ul>
@@ -167,3 +168,5 @@ function CrossIcon(props: JSX.IntrinsicElements['svg']) {
     </svg>
   );
 }
+
+export default MobileMenu;
