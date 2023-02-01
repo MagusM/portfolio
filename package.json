@@ -13,6 +13,8 @@
     "sanity-start": "sanity start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.8",
+    "@heroicons/react": "^2.0.14",
     "@next/font": "13.0.2",
     "@prisma/client": "^4.5.0",
     "@sanity/image-url": "^1.0.1",

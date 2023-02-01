@@ -9,6 +9,7 @@ import VideoCard from '@/components/VideoCard';
 import ArrowToRight from '@/components/ArrowToRight';
 import { InferGetStaticPropsType, NextPage } from 'next';
 import { useTranslations } from 'next-intl';
+import Hero from './components/home/Hero';
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -20,6 +21,7 @@ const Home: NextPage<HomeProps> = (props) => {
             <Container>
                 <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
                     {/* todo: add Hero */}
+                    <Hero />
                     {/* todo: add BlogPosts */}
                     {/* todo: add Learn */}
                     {/* <span className="h-16" /> */}

@@ -1,3 +1,10 @@
+const meta = {
+    title: 'Simon Mor – Developer, writer, creator.',
+    description: `Front/backend-end developer, JavaScript and coding enthusiast, and course creator.`,
+    image: 'https://simonmor.io/static/images/simon-mor.png',
+    type: 'website',
+};
+
 const innerLinks = {
     home: { 
         href: '/', 
@@ -35,6 +42,10 @@ const innerLinks = {
         href: '/blog',
         name: 'Blog',
     },
+    more: {
+        href: '/more',
+        name: 'More',
+    }
 };
 
 const externalLinks = {
@@ -60,7 +71,8 @@ const externalLinks = {
     },
 };
 
-export { 
+export {
+    meta,
     innerLinks, 
     externalLinks 
 };

@@ -4,6 +4,7 @@ import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-menu.module.css';
 import { innerLinks } from '@/lib/utils/constants';
+import OptionsWithDivider from './OptionsWithDividers';
 
 const MobileMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -112,6 +113,15 @@ const MobileMenu = () => {
           >
             <Link href={innerLinks.uses.href} className="flex w-auto pb-4">
               {innerLinks.uses.name}
+            </Link>
+          </li>
+
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '375ms' }}
+          >
+            <Link href={innerLinks.more.href} className="flex w-auto pb-4">
+              {innerLinks.more.name}
             </Link>
           </li>
         </ul>
