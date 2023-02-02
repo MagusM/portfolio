@@ -4,8 +4,9 @@ import Container from '@/components/Container';
 import avatar from '@/../public/avatar1.jpeg';
 import avatarBW from '@/../public/avatar2.jpeg';
 import PureLink from '@/components/PureLink';
-import { externalLinks, innerLinks } from '@/lib/utils/constants';
+import { externalLinks, certificates } from '@/lib/utils/constants';
 import { useTranslations } from 'next-intl';
+import CertificateItem from './components/about/CertificateItem';
 
 export default function About() {
   const t = useTranslations();
@@ -19,13 +20,16 @@ export default function About() {
           <h2>Links</h2>
           <ul>
             <li>
-              Twitter: <PureLink href={externalLinks.twitter.href} name={`@${externalLinks.twitter.userName}`} isExternal />
+              {externalLinks.twitter.name}: <PureLink href={externalLinks.twitter.href} name={`@${externalLinks.twitter.userName}`} isExternal />
             </li>
             <li>
-              GitHub: <PureLink href={externalLinks.github.href} name={`@${externalLinks.github.userName}`} isExternal />
+              {externalLinks.github.name}: <PureLink href={externalLinks.github.href} name={`@${externalLinks.github.userName}`} isExternal />
             </li>
             <li>
-              LinkedIn: <PureLink href={externalLinks.linkedin.href} name={`@${externalLinks.linkedin.userName}`} isExternal />
+              {externalLinks.linkedin.name}: <PureLink href={externalLinks.linkedin.href} name={`@${externalLinks.linkedin.userName}`} isExternal />
+            </li>
+            <li>
+              {externalLinks.readCV.name}: <PureLink href={externalLinks.readCV.href} name={`@${externalLinks.readCV.userName}`} isExternal />
             </li>
           </ul>
           <h2>Bio</h2>
@@ -39,6 +43,12 @@ export default function About() {
           <p>
             {t('about.education.degree')}, {t('about.education.institute')}
           </p>
+          <h3>Certifications</h3>
+          {/* container for Certifications */}
+          <div className="flex flex-col justify-center items-start">
+            <CertificateItem {...certificates.coursera.node1} />
+          </div>
+          
           <h2>Headshots</h2>
           <div className="flex space-x-8">
             <a href="/avatar1.jpeg">

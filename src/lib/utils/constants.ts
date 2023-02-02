@@ -65,14 +65,32 @@ const externalLinks = {
         userName: 'simon_mor84',
     },
     linkedin: {
-        href: 'https://www.linkedin.com/in/simonmor84',
+        href: 'https://www.linkedin.com/in/simonmor/',
         name: 'LinkedIn',
         userName: 'simonmor84',
     },
+    readCV: {
+        href: 'https://read.cv/simon_mor',
+        name: 'read.cv',
+        userName: 'simon_mor',
+    }
+};
+
+const certificates = {
+    coursera: {
+        node1: {
+            course: 'Server-side Development with NodeJS, Express and MongoDB',
+            date: 'August 6, 2019',
+            from: 'Coursera',
+            link: 'https://www.coursera.org/account/accomplishments/verify/W79CKGJ7AUBX',
+            imgSrc: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~W79CKGJ7AUBX/CERTIFICATE_LANDING_PAGE~W79CKGJ7AUBX.jpeg'
+        }
+    }
 };
 
 export {
     meta,
     innerLinks, 
-    externalLinks 
+    externalLinks,
+    certificates
 };

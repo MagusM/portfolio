@@ -1,6 +1,8 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { innerLinks } from '@/lib/utils/constants'
+import PureLink from './PureLink'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -8,7 +10,7 @@ function classNames(...classes) {
 
 const OptionsWithDivider = () => {
     return (
-        <Menu as="div" className="hidden md:inline-block relative inline-block text-left">
+        <Menu as="div" className="hidden md:inline-block relative text-left">
             <div>
                 <Menu.Button 
                     className="
@@ -23,7 +25,6 @@ const OptionsWithDivider = () => {
                         font-normal 
                         text-gray-600 
                         dark:text-gray-400 
-                        font-medium 
                         shadow-sm 
                         hover:bg-gray-50 
                         focus:outline-none 
@@ -50,7 +51,20 @@ const OptionsWithDivider = () => {
                     <div className="py-1">
                         <Menu.Item>
                             {({ active }) => (
-                                <a
+                                <PureLink 
+                                    href={innerLinks.about.href}
+                                    className={classNames(
+                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                        'block px-4 py-2 text-sm'
+                                    )}
+                                >
+                                    {innerLinks.about.name}
+                                </PureLink>
+                            )}
+                        </Menu.Item>
+                        <Menu.Item>
+                            {({ active }) => (
+                                <PureLink
                                     href="#"
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -58,12 +72,12 @@ const OptionsWithDivider = () => {
                                     )}
                                 >
                                     Edit
-                                </a>
+                                </PureLink>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
-                                <a
+                                <PureLink
                                     href="#"
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -71,14 +85,14 @@ const OptionsWithDivider = () => {
                                     )}
                                 >
                                     Duplicate
-                                </a>
+                                </PureLink>
                             )}
                         </Menu.Item>
                     </div>
                     <div className="py-1">
                         <Menu.Item>
                             {({ active }) => (
-                                <a
+                                <PureLink
                                     href="#"
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -86,7 +100,7 @@ const OptionsWithDivider = () => {
                                     )}
                                 >
                                     Archive
-                                </a>
+                                </PureLink>
                             )}
                         </Menu.Item>
                         <Menu.Item>

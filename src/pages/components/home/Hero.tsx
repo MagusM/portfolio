@@ -11,7 +11,7 @@ const Hero = () => {
                     {t('name')}
                 </h1>
                 <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-                    <span className="font-semibold bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] inline-block text-transparent bg-clip-text">Full stack developer</span>{' '} & {' '}
+                    <span className="font-semibold bg-gradient-to-r from-[#ed302d] via-[#3B82F6] to-[#9333EA] inline-block text-transparent bg-clip-text">Full stack developer</span>{' '} & {' '}
                     <span className="font-semibold text-[#3B82F6]">Team leader</span> {' '}
                     @ {' '}
                     <span className="font-semibold text-orange-500">Carwiz</span>
@@ -23,8 +23,8 @@ const Hero = () => {
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
                 <Image
                     alt="Simon Mor"
-                    height={176}
-                    width={176}
+                    height={100}
+                    width={100}
                     src="/avatar1.jpeg"
                     sizes="30vw"
                     priority
