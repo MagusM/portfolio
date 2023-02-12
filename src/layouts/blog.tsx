@@ -6,7 +6,6 @@ import Container from '@/components/Container';
 import Subscribe from '@/components/Subscribe';
 import ViewCounter from '@/components/ViewCounter';
 import { Post } from '@/lib/types';
-import { urlForImage } from '@/lib/sanity';
 
 export default function BlogLayout({
   children,

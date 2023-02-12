@@ -1,7 +1,8 @@
+const { withContentlayer } = require('next-contentlayer');
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   i18n: {
     locales: ['en-US', 'he-IL'],
@@ -26,6 +27,7 @@ module.exports = {
     ]
   },
   experimental: {
+    appDir: true,
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } }
     ]
@@ -89,3 +91,5 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()'
   }
 ];
+
+module.exports = withContentlayer(nextConfig);

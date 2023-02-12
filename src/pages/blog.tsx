@@ -1,24 +1,22 @@
 import { Suspense, useState } from 'react';
-
+import { allBlogs } from '@/../.contentlayer/generated';
 import Container from '@/components/Container';
 import BlogPost from '@/components/BlogPost';
 import { InferGetStaticPropsType } from 'next';
-import { indexQuery } from '@/lib/queries';
-import { getClient } from '@/lib/sanity-server';
 import { Post } from '@/lib/types';
 
 export default function Blog({
-  posts
+  allBlogs
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('');
-  const filteredBlogPosts = posts.filter((post) =>
+  const filteredBlogPosts = allBlogs.filter((post) =>
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   return (
     <Container
-      title="Blog – Lee Robinson"
-      description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
+      title="Blog – Simon Mor"
+      description="Thoughts on the software industry, programming, tech, Gaming, Gear, music, and my personal life."
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
@@ -26,7 +24,7 @@ export default function Blog({
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
           {`I've been writing online since 2014, mostly about web development and tech careers.
-            In total, I've written ${posts.length} articles on my blog.
+            In total, I've written ${allBlogs.length} articles on my blog.
             Use the search below to filter by title.`}
         </p>
         <div className="relative w-full mb-4">
@@ -98,7 +96,7 @@ export default function Blog({
 }
 
 export async function getStaticProps({ preview = false }) {
-  const posts: Post[] = await getClient(preview).fetch(indexQuery);
+  console.log({allBlogs});
 
-  return { props: { posts } };
+  return { props: { allBlogs } };
 }
