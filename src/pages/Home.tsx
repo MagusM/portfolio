@@ -10,6 +10,8 @@ import ArrowToRight from '@/components/ArrowToRight';
 import { InferGetStaticPropsType, NextPage } from 'next';
 import { useTranslations } from 'next-intl';
 import Hero from './components/home/Hero';
+import BlogPost from '@/components/BlogPost';
+import BlogPosts from './components/home/BlogPosts';
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -23,6 +25,7 @@ const Home: NextPage<HomeProps> = (props) => {
                     {/* todo: add Hero */}
                     <Hero />
                     {/* todo: add BlogPosts */}
+                    <BlogPosts />
                     {/* todo: add Learn */}
                     {/* <span className="h-16" /> */}
                     {/* todo: add Subscribe */}
@@ -35,7 +38,6 @@ const Home: NextPage<HomeProps> = (props) => {
 //todo: is needed ?
 const getStaticProps = async (context) => {
     const locale = context.locale || context.defaultLocale;
-    console.log(locale);
 
     return {
         props: {

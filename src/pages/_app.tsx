@@ -12,7 +12,6 @@ export default function App({
   Component,
   pageProps: { session,...pageProps }
 }) {
-  console.log({...pageProps});
   return (
     <MessagesProvider locale={pageProps.locale}>
       <SessionProvider session={session}>

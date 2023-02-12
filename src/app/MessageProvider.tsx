@@ -5,7 +5,7 @@ const MessagesProvider = ({
     locale = 'en-US',
     children,
 }: React.PropsWithChildren<any>) => {
-    console.log(locale);
+    console.log(`locale: ${locale}`);
     let messages = null;
     if (locale === 'he') {
         //todo: import he messages
