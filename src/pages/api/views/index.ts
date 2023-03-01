@@ -1,15 +1,15 @@
-import { queryBuilder } from 'lib/planetscale';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { getSpecificFields } from './utils';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
-    const data = await queryBuilder
-      .selectFrom('views')
-      .select(['slug', 'count'])
-      .execute();
+    console.log('async function handler1');
+    const data = await getSpecificFields({
+      fields: ['slug', 'views']
+    });
 
     return res.status(200).json(data);
   } catch (e) {

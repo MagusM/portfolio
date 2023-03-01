@@ -16,9 +16,22 @@ interface ViewsTable {
     count: number;
 }
 
+interface BlogPosts {
+    id: Generated<number>;
+    image: string;
+    slug: string;
+    publishedAt: Date;
+    title: string;
+    summary: string;
+    type: string;
+    views: number;
+    _raw: object;
+    _body: object;
+}
 interface Database {
     guestbook: GuestbookTable;
-    views: ViewsTable;
+    // views: ViewsTable;
+    blogPosts: BlogPosts;
 }
 
 export const queryBuilder = new Kysely<Database>({

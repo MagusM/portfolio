@@ -5,11 +5,14 @@ export type Post = {
   slug: string;
   content: MDXRemoteSerializeResult;
   title: string;
-  date: string;
-  excerpt: string;
+  publishedAt: string;
+  summary: string;
   coverImage: string;
   readingTime: string;
-  tweets: any[];
+  _raw: any,
+  type: string,
+  image: string,
+  body: any
 };
 
 export type Snippet = {

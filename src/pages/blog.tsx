@@ -1,31 +1,40 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useMemo, useState } from 'react';
 import { allBlogs } from '@/../.contentlayer/generated';
 import Container from '@/components/Container';
 import BlogPost from '@/components/BlogPost';
 import { InferGetStaticPropsType } from 'next';
 import { Post } from '@/lib/types';
+import { useTranslations } from 'next-intl';
 
-export default function Blog({
-  allBlogs
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Blog({data}: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log('pages/blog', { data });
   const [searchValue, setSearchValue] = useState('');
-  const filteredBlogPosts = allBlogs.filter((post) =>
-    post.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const filteredBlogPosts = useMemo(() => {
+      const toReturn = data.filter((post) => {
+        return post.title.toLowerCase().includes(searchValue.toLowerCase())
+        }
+      );
+      console.log({toReturn});
+      return toReturn;
+  }, [searchValue, data]);
+
+  const tt = useTranslations('blog');
+
+  /**
+   * 1. query db most viewed posts to set as Most popular
+   */
 
   return (
     <Container
-      title="Blog – Simon Mor"
+      title={`${tt('title')} - Simon Mor`}
       description="Thoughts on the software industry, programming, tech, Gaming, Gear, music, and my personal life."
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          Blog
+          {tt('title')}
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
-          {`I've been writing online since 2014, mostly about web development and tech careers.
-            In total, I've written ${allBlogs.length} articles on my blog.
-            Use the search below to filter by title.`}
+          {tt('description', { length: data.length })}
         </p>
         <div className="relative w-full mb-4">
           <input
@@ -53,32 +62,32 @@ export default function Blog({
         {!searchValue && (
           <>
             <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-              Most Popular
+              {tt('mostPopular')}
             </h3>
             <BlogPost
               title="Rust Is The Future of JavaScript Infrastructure"
-              excerpt="Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?"
+              summary="Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?"
               slug="rust"
             />
-            <BlogPost
+            {/* <BlogPost
               title="Everything I Know About Style Guides, Design Systems, and Component Libraries"
-              excerpt="A deep-dive on everything I've learned in the past year building style guides, design systems, component libraries, and their best practices."
+              summary="A deep-dive on everything I've learned in the past year building style guides, design systems, component libraries, and their best practices."
               slug="style-guides-component-libraries-design-systems"
             />
             <BlogPost
               title="Building a Design System Monorepo with Turborepo"
-              excerpt="Manage multiple packages with a shared build, test, and release process using Turborepo, Changesets, Storybook, and more."
+              summary="Manage multiple packages with a shared build, test, and release process using Turborepo, Changesets, Storybook, and more."
               slug="turborepo-design-system-monorepo"
-            />
+            /> */}
           </>
         )}
         <Suspense fallback={null}>
           <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-            All Posts
+            {tt('allPosts')}
           </h3>
           {!filteredBlogPosts.length && (
             <p className="mb-4 text-gray-600 dark:text-gray-400">
-              No posts found.
+              {tt('noPostsFound')}
             </p>
           )}
           {filteredBlogPosts.map((post) => (
@@ -86,7 +95,7 @@ export default function Blog({
               key={post.title}
               slug={post.slug}
               title={post.title}
-              excerpt={post.excerpt}
+              summary={post.summary}
             />
           ))}
         </Suspense>
@@ -96,7 +105,14 @@ export default function Blog({
 }
 
 export async function getStaticProps({ preview = false }) {
-  console.log({allBlogs});
+  // console.log({allBlogs});
+  //todo: quer dB for all blogPosts
+  // const data = [allBlogs[0], allBlogs[1]];
+  const data = [];
 
-  return { props: { allBlogs } };
+  return {
+    props: {
+      data
+    }
+  };
 }

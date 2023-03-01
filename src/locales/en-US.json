@@ -27,5 +27,12 @@
         "title": "Learn React & Next.js",
         "description": "Build and deploy a modern SaaS application using the most popular open-source software. This course is 12 hours long and is completely live streamed.",
         "watchAll": "Watch all videos"
+    },
+    "blog": {
+    "title": "Blog",
+    "description": "I've been writing code since 2015, Lately I have been writing mostly about web development, tech and Gear. In total, I've written {length} articles on my blog. Use the search below to filter by title.",
+    "mostPopular": "Most Popular",
+    "allPosts": "All Posts",
+    "noPostsFound": "No posts found."
     }
 }
